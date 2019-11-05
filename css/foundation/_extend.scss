@@ -1,0 +1,67 @@
+// ==========================================================================
+// extend設定
+// ==========================================================================
+
+/* title
+===============================================*/
+%title {
+  font-size: 2.4rem;
+  text-align: center;
+  font-family: $_font-ja;
+  margin-bottom: 40px;
+  @include mq-min(lg){
+    font-size: 3.6rem;
+    margin-bottom: 80px;
+  }
+}
+
+%arrowLink {
+  display: inline-block;
+  position: relative;
+  padding-left: 20px;
+  font-size: 1.2rem;
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: $color-accent;
+    backface-visibility: hidden;
+    transition: all .5s;
+  }
+  &::before {
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    z-index: 1;
+  }
+  &::after {
+    width: 1px;
+    height: 8px;
+    bottom: -3px;
+    left: 2px;
+    transform: rotate(45deg);
+  }
+  @include mq-min(lg){
+    padding-left: 30px;
+    font-size: 1.6rem;
+    &::before,
+    &::after {
+      transition: all .5s;
+    }
+    &::after {
+      height: 10px;
+      left: 3px;
+    }
+    &:hover {
+      &::before {
+        width: 105%;
+        left: -5%;
+      }
+      &::after {
+        left: calc(3px - 5%);
+      }
+    }
+  }
+}

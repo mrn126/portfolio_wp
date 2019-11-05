@@ -1,0 +1,174 @@
+@charset "utf-8";
+
+/* works 制作詳細ページ
+===============================================*/
+.works {
+
+/* header
+===============================================*/
+  &-header {
+    width: 100%;
+    &__inner{
+      width: calc(100% - 30px);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 0;
+      @include mq-min(lg){
+        padding: 90px 0 30px;
+      }
+    }
+    &__back {
+      @extend %arrowLink;
+    }
+  }
+
+/* main
+===============================================*/
+  &-main {
+    &__inner {
+      width: calc(100% - 30px);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    &__mv {
+      width: 100%;
+      margin: 0 auto 30px;
+      @include mq-min(md){
+        margin-bottom: 80px;
+      }
+    }
+  }
+  
+  &-section {
+    &__title {
+      @extend %title;
+      margin: 0 auto 20px;
+      &_en {
+        font-family: $_font-en;
+      }
+      &_icon {
+        font-size: 1.4rem;
+        @include mq-min(lg){
+          font-size: 2rem;
+        }
+      }
+      a {
+        display: inline-block;
+      }
+    }
+    &__skill {
+      font-size: 1.6rem;
+      text-align: center;
+      font-style: $_font-en;
+      margin: 0 auto 30px;
+      @include mq-min(md){
+        font-size: 2rem;
+      }
+      @include mq-min(lg){
+        margin-bottom: 50px;
+      }
+    }
+    &__text {
+      font-size: 1.4rem;
+      text-align: justify;
+      text-justify: inter-ideograph;
+      font-feature-settings: "palt";
+      margin: 0 auto 30px;
+      @include mq-min(md){
+        font-size: 1.6rem;
+        margin-bottom: 50px;
+        width: 90%;
+      }
+      @include mq-min(lg){
+        // width: 80%;
+        width: initial;
+        display: inline-block;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0 15px 100px;
+      }
+    }
+    &__block {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0 -10px;
+        @include mq-min(md){
+          margin: 0 -30px;
+        }
+    }
+    &__image {
+      width: 100%;
+      margin: 0 10px 30px;
+      &_sp {
+        flex-basis: calc((100% / 2) - 30px);
+        max-width: calc((100% / 2) - 30px);
+        margin: 0 15px 50px;
+      }
+      @include mq-min(md){
+        &_pc {
+          flex-basis: calc((100% / 2) - 60px);
+          max-width: calc((100% / 2) - 60px);
+          margin: 0 30px 60px;
+        }
+        &_sp {
+          flex-basis: calc((100% / 4) - 60px);
+          max-width: calc((100% / 4) - 60px);
+          margin: 0 30px 100px;
+        }
+      }
+      @include mq-min(lg){
+        &_pc {
+          margin-bottom: 100px;
+        }
+      }
+    }
+  }
+
+  &-lower {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 50px;
+    @include mq-min(lg){
+      margin-bottom: 100px;
+    }
+    &__link {
+      &_prev {
+        @extend %arrowLink;
+      }
+      &_next {
+        @extend %arrowLink;
+        padding-left: 0;
+        padding-right: 20px;
+        &::after {
+          left: inherit;
+          right: 2px;
+          transform: rotate(-45deg);
+        }
+        @include mq-min(lg){
+          padding-left: 0;
+          padding-right: 30px;
+          &::after {
+            left: inherit;
+            right: 3px;
+          }
+          &:hover {
+            &::before {
+              left: 0;
+            }
+            &::after {
+              left: inherit;
+              right: calc(3px - 5%);
+            }
+          }
+        }
+      }
+      &_disable {
+        opacity: .6;
+        pointer-events: none;
+      }
+    }
+  }
+
+}

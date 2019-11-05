@@ -1,0 +1,33 @@
+// ==========================================================================
+// 各種変数設定
+// ==========================================================================
+
+/* breakpoint
+===============================================*/
+// mobile first
+$breakpoints-min: ( 
+  'sm': 'screen and (min-width: 576px),print',
+  'md': 'screen and (min-width: 768px),print',
+  'lg': 'screen and (min-width: 1024px),print',
+  'xl': 'screen and (min-width: 1200px),print',
+) !default;
+
+// pc first
+$breakpoints-max: ( 
+  'sm': 'screen and (max-width: 575px),print',
+  'md': 'screen and (max-width: 767px),print',
+  'lg': 'screen and (max-width: 1023px),print',
+  'xl': 'screen and (max-width: 1200px),print',
+) !default;
+
+/* key color
+===============================================*/
+$color-main: #e3b6a1;
+$color-accent: #e55258;
+$color-text: #707070;
+$color-white: #fff;
+
+/* font
+===============================================*/
+$_font-en:'Lato','Helvetica',"游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, sans-serif !default;
+$_font-ja:"游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, typesquare, sans-serif !default;

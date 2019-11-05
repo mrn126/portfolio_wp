@@ -1,0 +1,41 @@
+// ==========================================================================
+// サイト全体のcss設定
+// ==========================================================================
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: $_font-ja;
+  color: $color-text;
+  font-size: 1.6em;
+  line-height: 1.6;
+  width: 100%;
+}
+a {
+  color: $color-text;
+  display: block;
+}
+img {
+  display: block;
+  width: 100%;
+}
+.wrapper {
+  overflow: hidden;
+}
+.inview-fade {
+	opacity: 0;
+	transition: opacity 2s;
+}
+.dn{display: none !important;}
+.di{display: inline !important;}
+.dib{display: inline-block !important;}
+.db{display: block !important;}
+@each $display in map-keys($breakpoints-min){
+	@include mq-min($display){
+		.dn-#{$display}{display: none !important;}
+		.di-#{$display}{display: inline !important;}
+		.dib-#{$display}{display: inline-block !important;}
+		.db-#{$display}{display: block !important;}
+	}
+}

@@ -1,0 +1,30 @@
+// ==========================================================================
+// mixin設定
+// ==========================================================================
+
+/* media query (mobile first)
+// 引数$breakpointに渡された値をブレイクポイントにしたmedia query設定を出力する（モバイルファースト）
+===============================================*/
+@mixin mq-min($breakpoint: md) {
+	@media #{map-get($breakpoints-min, $breakpoint)} {
+		@content;
+	}
+}
+
+/* media query (pc first)
+// 引数$breakpointに渡された値をブレイクポイントにしたmedia query設定を出力する（PCファースト）
+===============================================*/
+@mixin mq-max($breakpoint: md) {
+	@media #{map-get($breakpoints-max, $breakpoint)} {
+		@content;
+	}
+}
+
+/* media query (for IE11)
+// IE用
+===============================================*/
+@mixin mq-ie() {
+	@media screen and (-ms-high-contrast: none) {
+		@content;
+	}
+}
