@@ -1,4 +1,4 @@
-$(function(){
+jQuery(function($){
   // スムーススクロール設定
   $('a[href^="#"]').click(function(){
     var speed = 500;
