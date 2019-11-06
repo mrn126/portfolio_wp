@@ -34,3 +34,17 @@ wp_enqueue_script('inview', get_template_directory_uri() . '/js/jquery.inview.mi
 wp_enqueue_script('my', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'my_script_init');
+
+/**
+* メニューの登録
+* 参考：https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/register_nav_menus
+*/
+function my_menu_init()
+{
+register_nav_menus(
+  array(
+    'gnav' => 'ヘッダーメニュー',
+  )
+);
+}
+add_action('init', 'my_menu_init');

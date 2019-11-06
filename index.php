@@ -12,13 +12,17 @@
           <span class="header-nav__toggle_icon navbar_toggle_icon"></span>
           <span class="header-nav__toggle_icon navbar_toggle_icon"></span>
 			</div>
-		</div>
-		<ul class="header-nav__list menu">
-			<li class="header-nav__item"><a href="#about">自己紹介</a></li>
-			<li class="header-nav__item"><a href="#skills">できること</a></li>
-			<li class="header-nav__item"><a href="#works">制作一覧</a></li>
-			<li class="header-nav__item"><a href="#contact">お問合わせ</a></li>
-		</ul>
+    </div>
+    <?php
+      wp_nav_menu(
+        array(
+        'depth' => 1,
+        'theme_location' => 'gnav', //ドロワーメニューをここに表示すると指定
+        'container' => false,
+        'menu_class' => 'header-nav__list',
+        )
+      );
+    ?>
 	</nav>
 </header>
 

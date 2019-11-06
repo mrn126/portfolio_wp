@@ -11,7 +11,7 @@ jQuery(function($){
 
   // ドロワーメニュー
   $('.navbar-toggle').on('click', function () {
-    var $menu = $('.menu');
+    var $menu = $('.header-nav__list');
     var $menuBtn = $(this);
     $menuBtn.toggleClass('open');
     if($menuBtn.hasClass('open')){
@@ -20,7 +20,7 @@ jQuery(function($){
       $menu.slideUp(500);
     }
     // リンクを押すとメニュー非表示
-    $('.menu a').on('click',function(){
+    $('.header-nav__list a').on('click',function(){
       $menuBtn.removeClass('open');
       $menu.slideUp(500);
     });
