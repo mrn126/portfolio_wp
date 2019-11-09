@@ -234,6 +234,10 @@ img {
   }
 }
 
+.works-main__mv .size-mv {
+  height: auto;
+}
+
 .works-section__title {
   margin: 0 auto 20px;
 }

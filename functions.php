@@ -6,6 +6,7 @@
 function my_setup()
 {
 add_theme_support('post-thumbnails'); // アイキャッチ画像を有効化
+add_image_size( 'mv', 1200, 750, array( 'center', 'top' ) ); //実績詳細ページのメインヴィジュアル
 add_theme_support('title-tag'); // タイトルタグ自動生成
 add_theme_support(
 'html5',

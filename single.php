@@ -26,7 +26,7 @@
       <a href="https://mrp-style.com/portfolio/01/" target="_blank">
         <?php
         if ( has_post_thumbnail() ) {
-        the_post_thumbnail( 'large' );
+        the_post_thumbnail( 'mv' );
         }
         ?>
       </a>
