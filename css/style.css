@@ -236,6 +236,7 @@ img {
 
 .works-main__mv .size-mv {
   height: auto;
+  border: 1px solid #707070;
 }
 
 .works-section__title {
@@ -248,6 +249,10 @@ img {
 
 .works-section__title_icon {
   font-size: 1.4rem;
+}
+
+.works-section__title_icon .fa-external-link-alt:before {
+  content: "\f35d";
 }
 
 @media screen and (min-width: 1024px), print {
@@ -346,6 +351,70 @@ img {
 @media screen and (min-width: 1024px), print {
   .works-section__image_pc {
     margin-bottom: 100px;
+  }
+}
+
+.works-section .su-row {
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 768px), print {
+  .works-section .su-row {
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 1024px), print {
+  .works-section .su-row {
+    margin-bottom: 100px;
+  }
+}
+
+@media screen and (min-width: 768px), print {
+  .works-section .pc-img {
+    width: 48% !important;
+    margin: 0 0 0 4% !important;
+    float: left !important;
+  }
+  .works-section .pc-img:first-child {
+    margin-left: 0 !important;
+  }
+  .works-section .pc-img:last-child {
+    float: right !important;
+  }
+}
+
+.works-section .sp-img {
+  width: 48% !important;
+  margin: 0 0 30px 4% !important;
+  float: left !important;
+}
+
+.works-section .sp-img:nth-child(odd) {
+  margin-left: 0 !important;
+}
+
+.works-section .sp-img:nth-child(even) {
+  float: right !important;
+}
+
+@media screen and (min-width: 768px), print {
+  .works-section .sp-img {
+    width: 22% !important;
+    margin: 0 0 0 4% !important;
+    float: left !important;
+  }
+  .works-section .sp-img:nth-child(odd) {
+    margin-left: 4% !important;
+  }
+  .works-section .sp-img:nth-child(even) {
+    float: left !important;
+  }
+  .works-section .sp-img:first-child {
+    margin-left: 0 !important;
+  }
+  .works-section .sp-img:last-child {
+    float: right !important;
   }
 }
 

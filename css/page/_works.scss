@@ -38,6 +38,7 @@
       }
       .size-mv {
         height: auto;
+        border: 1px solid #707070;
       }
     }
   }
@@ -51,6 +52,9 @@
       }
       &_icon {
         font-size: 1.4rem;
+        .fa-external-link-alt:before {
+          content: "\f35d";
+        }
         @include mq-min(lg){
           font-size: 2rem;
         }
@@ -124,6 +128,57 @@
       @include mq-min(lg){
         &_pc {
           margin-bottom: 100px;
+        }
+      }
+    }
+    // WordPress用css設定
+    .su-row {
+      margin-bottom: 30px;
+      @include mq-min(md){
+        margin-bottom: 60px;
+      }
+      @include mq-min(lg){
+        margin-bottom: 100px;
+      }
+    }
+    .pc-img {
+      @include mq-min(md){
+        width: 48%!important;
+        margin: 0 0 0 4%!important;
+        float: left!important;
+        &:first-child {
+          margin-left: 0!important;
+        }
+        &:last-child {
+          float: right!important;
+        }
+      }
+    }
+    .sp-img {
+      width: 48%!important;
+      margin: 0 0 30px 4%!important;
+      float: left!important;
+      &:nth-child(odd) {
+        margin-left: 0!important;
+      }
+      &:nth-child(even) {
+        float: right!important;
+      }
+      @include mq-min(md){
+        width: 22%!important;
+        margin: 0 0 0 4%!important;
+        float: left!important;
+        &:nth-child(odd) {
+          margin-left: 4%!important;
+        }
+        &:nth-child(even) {
+          float: left!important;
+        }
+        &:first-child {
+          margin-left: 0!important;
+        }
+        &:last-child {
+          float: right!important;
         }
       }
     }
