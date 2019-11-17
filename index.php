@@ -134,9 +134,23 @@
         <h2 class="main-works__title inview-fade">制作一覧</h2>
         <p class="main-works__text inview-fade">個人で制作したものを掲載しています。<br>仕事で制作したものについてはお問合わせください。</p>
         <ul class="main-works__list">
-          <li class="main-works__item inview-fade"><a href="works/03.html" class="main-works__link"><span class="main-works__arrow"></span><img src="<?php echo get_template_directory_uri(); ?>/img/img03.png" alt="実績03"></a></li>
-          <li class="main-works__item inview-fade"><a href="works/02.html" class="main-works__link"><span class="main-works__arrow"></span><img src="<?php echo get_template_directory_uri(); ?>/img/img02.png" alt="実績02"></a></li>
-          <li class="main-works__item inview-fade"><a href="works/01.html" class="main-works__link"><span class="main-works__arrow"></span><img src="<?php echo get_template_directory_uri(); ?>/img/img01.png" alt="実績01"></a></li>
+        <?php
+        // 最新の実績3件取得
+        $works_posts = get_posts( array(
+          'post_type' => 'post', // 投稿タイプ
+          'posts_per_page'=> 3, //3件取得
+          'category_name' => 'works', // 制作実績カテゴリーのものを
+          'orderby' => 'DESC', // 新しい順に
+        ) );
+        foreach($works_posts as $post): setup_postdata($post);
+        ?>
+          <li class="main-works__item inview-fade">
+            <a href="<?php the_permalink(); ?>" class="main-works__link">
+              <span class="main-works__arrow"></span>
+              <?php the_post_thumbnail('medium'); ?>
+            </a>
+          </li>
+        <?php endforeach; wp_reset_postdata(); ?>
         </ul>
     </section>
 

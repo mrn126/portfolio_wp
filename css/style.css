@@ -1271,6 +1271,10 @@ img {
   }
 }
 
+.main-works img {
+  height: auto;
+}
+
 .main-contact {
   padding-top: 60px;
   margin-top: -60px;
