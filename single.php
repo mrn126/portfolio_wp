@@ -23,7 +23,7 @@
 
     <!-- mainvisual -->
     <div class="works-main__mv">
-      <a href="https://mrp-style.com/portfolio/01/" target="_blank">
+      <a href="<?php echo esc_url(get_field('制作物url')); ?>" target="_blank">
         <?php
         if ( has_post_thumbnail() ) {
         the_post_thumbnail( 'mv' );
@@ -34,10 +34,12 @@
 
     <!-- 制作詳細 -->
     <section class="works-section">
-      <h1 class="works-section__title works-section__title_en"><a href="https://mrp-style.com/portfolio/01/" target="_blank"><?php the_title(); ?> <i class="fas fa-external-link-alt works-section__title_icon"></i></a></h1>
-      <?php
-      //本文の表示
-      the_content(); ?>
+      <h1 class="works-section__title works-section__title_en">
+        <a href="<?php echo esc_url(get_field('制作物url')); ?>" target="_blank">
+          <?php the_title(); ?> <i class="fas fa-external-link-alt works-section__title_icon"></i>
+        </a>
+      </h1>
+      <?php the_content(); ?>
     </section>
 
     <?php
@@ -46,8 +48,18 @@
     ?>
 
     <div class="works-lower">
-        <p class="works-lower__link works-lower__link_prev works-lower__link_disable"><a href="">前へ</a></p>
-        <p class="works-lower__link works-lower__link_next"><a href="02.html">次へ</a></p>
+      <!-- 前の実績 -->
+      <?php if (get_previous_post(true)): ?>
+        <p class="works-lower__link works-lower__link_prev"><?php previous_post_link('%link', '前へ', true); ?></p>
+      <?php else: ?>
+        <p class="works-lower__link works-lower__link_prev works-lower__link_disable">前へ</p>
+      <?php endif; ?>
+      <!-- 次の実績 -->
+      <?php if (get_next_post(true)): ?>
+        <p class="works-lower__link works-lower__link_next"><?php next_post_link('%link', '次へ', true); ?></p>
+      <?php else: ?>
+        <p class="works-lower__link works-lower__link_next works-lower__link_disable">次へ</p>
+      <?php endif; ?>
     </div>
 
   </div><!-- /inner end -->
