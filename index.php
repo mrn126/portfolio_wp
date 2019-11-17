@@ -88,7 +88,7 @@
             </tr>
             <tr class="main-skills__list">
               <td class="main-skills__item">WordPress</td>
-              <td class="main-skills__level">★☆☆☆☆</td>
+              <td class="main-skills__level">★★☆☆☆</td>
             </tr>
             <tr class="main-skills__list">
               <td class="main-skills__item">Git</td>
